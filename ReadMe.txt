@@ -1,7 +1,7 @@
-Amxn.txt
+﻿Amxn.txt
 Amxn1.txt
 Amxn2.txt
-�������ļ����б�ͷ
+这三个文件带有表头
 
 B_n1xk1.txt
 B_n2xk2.txt
