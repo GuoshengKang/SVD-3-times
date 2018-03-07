@@ -48,7 +48,7 @@ print X[0,:]
 print original_X_1[0,:]
 print array(original_X_2[2])[0,:]
 ```
-###output：
+###output：/*
 PCA(copy=True, iterated_power='auto', n_components=0.85, random_state=None,
   svd_solver='auto', tol=0.0, whiten=False)
 The estimated number of components: 4
