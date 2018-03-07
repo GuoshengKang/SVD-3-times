@@ -6,7 +6,7 @@ import os
 from numpy import *
 from sklearn.decomposition import PCA
 
-data_path = os.path.join(os.path.split(os.path.realpath(__file__))[0], "data.txt")
+data_path = os.path.join(os.path.split(os.path.realpath(__file__))[0], "data4pca.txt")
 arr=np.loadtxt(data_path,delimiter=',')
 row,col=arr.shape #(200L, 8L)
 X=arr[:,:col-1]  #(200L, 7L)
