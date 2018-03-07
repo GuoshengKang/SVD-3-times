@@ -19,3 +19,6 @@ SVD3-->k=1083
 reduction_mat.npy
 reduction_mat.txt
 column_names.txt
+
+附:SVD和PCA的区别与联系
+https://www.zhihu.com/question/38319536/answer/131029607
