@@ -22,3 +22,4 @@ column_names.txt
 
 附:SVD和PCA的区别与联系
 https://www.zhihu.com/question/38319536/answer/131029607
+https://www.cnblogs.com/pinard/p/6251584.html
