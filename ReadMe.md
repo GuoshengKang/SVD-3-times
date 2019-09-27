@@ -33,6 +33,8 @@ $$A_{m \times n_{1}} = U_{m \times m} \Sigma_{m \times n_{1}} V_{n_{1} \times n_
 
 $$A_{m \times n_{2}} = U_{m \times m} \Sigma_{m \times n_{2}} V_{n_{2} \times n_{2}}^\mathrm{T} \Rightarrow A_{m \times n_{2}} \biggl(V_{n_{2} \times k_{2}} \Sigma_{k_{2} \times k_{2}}^{-1}\biggr) \approx U_{m \times k_{2}}$$
 
+$$U_{m \times (k_{1}+k_{2})} =[U_{m \times k_{1}}\quad U_{m \times k_{2}}]= U_{m \times m} \Sigma_{m \times (k_{1}+k_{2})} V_{(k_{1}+k_{2}) \times (k_{1}+k_{2})}^\mathrm{T} \\ \Rightarrow U_{m \times (k_{1}+k_{2})} \biggl(V_{(k_{1}+k_{2}) \times k} \Sigma_{k \times k}^{-1}\biggr) \approx U_{m \times k}$$
+
 
 $$\begin{gather} 
 A_{m \times n_{1}} = U_{m \times m} \Sigma_{m \times n_{1}} V_{n_{1} \times n_{1}}^\mathrm{T} \Rightarrow A_{m \times n_{1}} V_{n_{1} \times k_{1}} \Sigma_{k_{1} \times k_{1}}^{-1} \approx U_{m \times k_{1}} \notag \\ \\
