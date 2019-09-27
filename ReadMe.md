@@ -1,16 +1,14 @@
 ## 功能介绍
 
 ## 实现步骤
-1. 获取数据: [**query_samples.sql**](query_samples.sql)
-2. [**text_preprocess.py**](text_preprocess.py)
-  * **Function**: 处理数据，将原始Hive中导出的数据处理成规范的分词数据
+1. **获取数据**: [**query_samples.sql**](query_samples.sql)
+2. **处理数据**: [**text_preprocess.py**](text_preprocess.py)，将原始Hive中导出的数据处理成规范的分词数据
   * **Input**:
     * raw_samples_50000_front.csv
   * **Output**:
     * samples_50000.csv
     * [dictionary.txt](dictionary.txt)
-3. [**txt2df.py**](txt2df.py)
-  * **Function**: 文本数据转为矩阵
+3. **文本数据转为矩阵**: [**txt2df.py**](txt2df.py)
   * **Input**:
     * [samples_50000.csv](samples_50000.csv): 50000条样本数据
     * [dictionary.txt](dictionary.txt): 5934个特征，即关键词
@@ -30,10 +28,9 @@
     * **Input**: Amxn1.txt，B_n1xk1.txt，Amxn2.txt，B_n2xk2.txt
     * **Output**: B_n3xk3.txt，$B_{n_{3} \times k_{3}}=\biggl( V_{(k_{1}+k_{2}) \times k} \Sigma_{k \times k}^{-1}\biggl)$
 5. **结果合并**: [dim_reduction_matrix.py](dim_reduction_matrix.py)
-    * **Input**: B_n1xk1.txt，B_n2xk2.txt，B_n3xk3.txt
-    * **Output**: reduction_mat.txt，
-$reduction\_mat=
-\begin{bmatrix}
+  * **Input**: B_n1xk1.txt，B_n2xk2.txt，B_n3xk3.txt
+  * **Output**: reduction_mat.txt，reduction_mat=
+$\begin{bmatrix}
 \biggl( V_{n_{1} \times k_{1}} \Sigma_{k_{1} \times k_{1}}^{-1}\biggl)\biggl(V_{k_{1} \times k} \Sigma_{k \times k}^{-1}\biggr) \\
 \biggl(V_{n_{2} \times k_{2}} \Sigma_{k_{2} \times k_{2}}^{-1}\biggr)\biggl(V_{k_{2} \times k} \Sigma_{k \times k}^{-1}\biggr)
 \end{bmatrix}_{n \times k}$
