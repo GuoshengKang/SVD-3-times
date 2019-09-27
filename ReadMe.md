@@ -19,8 +19,16 @@
     * Amxn.txt: DataFrame保存为txt文件,50000x5934
     * Amxn1.txt: Amxn1=df.ix[:,:n1]，其中n1=3000
     * Amxn2.txt: Amxn2=df.ix[:,n1:]，其中n2=5934-3000=2934
-
-
+4. **做三次SVD**
+  * [do_svd_one.py](do_svd_one.py)
+    * **Input**: Amxn1.txt
+    * **Output**: B_n1xk1.txt，$B_{n_{1} \times k_{1}=\biggl( V_{n_{1} \times k_{1}} \Sigma_{k_{1} \times k_{1}}^{-1}\biggl)$
+  * [do_svd_two.py](do_svd_two.py)
+    * **Input**: Amxn2.txt
+    * **Output**: B_n2xk2.txt，$B_{n_{2} \times k_{2}=\biggl( V_{n_{2} \times k_{2}} \Sigma_{k_{2} \times k_{2}}^{-1}\biggl)$
+  * [do_svd_three.py](do_svd_three.py)
+    * **Input**: Amxn1.txt，B_n1xk1，Amxn2.txt，B_n2xk2.txt
+    * **Output**: B_n3xk3.txt，$B_{n_{3} \times k_{3}=\biggl( V_{(k_{1}+k_{2}) \times k} \Sigma_{k \times k}^{-1}\biggl)$
 
 
 ## 数学推导
@@ -42,17 +50,17 @@ $$A_{m \times n} = {[A_{m \times n_{1}}\quad A_{m \times n_{2}}]}_{m \times n}$$
 
 $$\approx \biggl[A_{m \times n_{1}}\biggl( V_{n_{1} \times k_{1}} \Sigma_{k_{1} \times k_{1}}^{-1}\biggl) \quad A_{m \times n_{2}}\biggl(V_{n_{2} \times k_{2}} \Sigma_{k_{2} \times k_{2}}^{-1}\biggr) \biggr]_{m \times n}$$
 
-$$\approx \biggl[A_{m \times n_{1}}\biggl( V_{n_{1} \times k_{1}} \Sigma_{k_{1} \times k_{1}}^{-1}\biggl)\biggl(V_{(k_{1}+k_{2}) \times k} \Sigma_{k \times k}^{-1}\biggr) + A_{m \times n_{2}}\biggl(V_{n_{2} \times k_{2}} \Sigma_{k_{2} \times k_{2}}^{-1}\biggr)\biggl(V_{(k_{1}+k_{2}) \times k} \Sigma_{k \times k}^{-1}\biggr) \biggr]_{m \times k}$$
+$$\approx \biggl[A_{m \times n_{1}}\biggl( V_{n_{1} \times k_{1}} \Sigma_{k_{1} \times k_{1}}^{-1}\biggl)\biggl(V_{k_{1} \times k} \Sigma_{k \times k}^{-1}\biggr) + A_{m \times n_{2}}\biggl(V_{n_{2} \times k_{2}} \Sigma_{k_{2} \times k_{2}}^{-1}\biggr)\biggl(V_{k_{2} \times k} \Sigma_{k \times k}^{-1}\biggr) \biggr]_{m \times k}$$
 
 目标降维矩阵为: 
 $$\begin{bmatrix}
-\biggl( V_{n_{1} \times k_{1}} \Sigma_{k_{1} \times k_{1}}^{-1}\biggl)\biggl(V_{(k_{1}+k_{2}) \times k} \Sigma_{k \times k}^{-1}\biggr) \\
-\biggl(V_{n_{2} \times k_{2}} \Sigma_{k_{2} \times k_{2}}^{-1}\biggr)\biggl(V_{(k_{1}+k_{2}) \times k} \Sigma_{k \times k}^{-1}\biggr)
+\biggl( V_{n_{1} \times k_{1}} \Sigma_{k_{1} \times k_{1}}^{-1}\biggl)\biggl(V_{k_{1} \times k} \Sigma_{k \times k}^{-1}\biggr) \\
+\biggl(V_{n_{2} \times k_{2}} \Sigma_{k_{2} \times k_{2}}^{-1}\biggr)\biggl(V_{k_{2} \times k} \Sigma_{k \times k}^{-1}\biggr)
 \end{bmatrix}_{n \times k}$$
 
 
 ## 注意
-1. 最后目标降维矩阵应为一个列块矩阵，由于Latex换行(即"\\")无法兼容显示，所以显示成了行块矩阵
+1. 最后的目标降维矩阵应为一个列块矩阵，由于Latex换行(即"\\\\")无法兼容显示，所以显示成了行块矩阵
 2. Chrome的插件"GitHub with MathJax"可以在浏览器解析Tex公式，但是没装插件的可能看着还是源码。Chrome官方插件应用商店的地址: <https://chrome.google.com/webstore/category/extensions?hl=zh-CN>
 
 
