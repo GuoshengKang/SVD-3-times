@@ -20,16 +20,23 @@
     * Amxn1.txt: Amxn1=df.ix[:,:n1]，其中n1=3000
     * Amxn2.txt: Amxn2=df.ix[:,n1:]，其中n2=5934-3000=2934
 4. **做三次SVD**
-  * [do_svd_one.py](do_svd_one.py)
+  * **第一次**: [do_svd_one.py](do_svd_one.py)
     * **Input**: Amxn1.txt
     * **Output**: B_n1xk1.txt，$B_{n_{1} \times k_{1}}=\biggl( V_{n_{1} \times k_{1}} \Sigma_{k_{1} \times k_{1}}^{-1}\biggl)$
-  * [do_svd_two.py](do_svd_two.py)
+  * **第二次**: [do_svd_two.py](do_svd_two.py)
     * **Input**: Amxn2.txt
     * **Output**: B_n2xk2.txt，$B_{n_{2} \times k_{2}}=\biggl( V_{n_{2} \times k_{2}} \Sigma_{k_{2} \times k_{2}}^{-1}\biggl)$
-  * [do_svd_three.py](do_svd_three.py)
-    * **Input**: Amxn1.txt，B_n1xk1，Amxn2.txt，B_n2xk2.txt
+  * **第三次**: [do_svd_three.py](do_svd_three.py)
+    * **Input**: Amxn1.txt，B_n1xk1.txt，Amxn2.txt，B_n2xk2.txt
     * **Output**: B_n3xk3.txt，$B_{n_{3} \times k_{3}}=\biggl( V_{(k_{1}+k_{2}) \times k} \Sigma_{k \times k}^{-1}\biggl)$
-
+5. **结果合并**: [dim_reduction_matrix.py](dim_reduction_matrix.py)
+    * **Input**: B_n1xk1.txt，B_n2xk2.txt，B_n3xk3.txt
+    * **Output**: reduction_mat.txt，
+$reduction_mat=
+\begin{bmatrix}
+\biggl( V_{n_{1} \times k_{1}} \Sigma_{k_{1} \times k_{1}}^{-1}\biggl)\biggl(V_{k_{1} \times k} \Sigma_{k \times k}^{-1}\biggr) \\
+\biggl(V_{n_{2} \times k_{2}} \Sigma_{k_{2} \times k_{2}}^{-1}\biggr)\biggl(V_{k_{2} \times k} \Sigma_{k \times k}^{-1}\biggr)
+\end{bmatrix}_{n \times k}$
 
 ## 数学推导
 $A_{m \times n} = [A_{m \times n_{1}} \quad A_{m \times n_{2}}]$，其中$n = n_{1} + n_{2}$
