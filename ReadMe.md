@@ -75,7 +75,7 @@ $$\begin{bmatrix}
     * pca.fit_transform(X)
     * mat(X)*pca.components_.T
 * 参考资料
-  * [SVD and PCA.pdf](SVD and PCA.pdf)
+  * [SVD and PCA.pdf](SVD_and_PCA.pdf)
   * [svd_pca.pptx](svd_pca.pptx)
 
 
