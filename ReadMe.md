@@ -21,7 +21,13 @@
     * Amxn2.txt: Amxn2=df.ix[:,n1:]，其中n2=5934-3000=2934
 
 
-**注**：Chrome的插件"GitHub with MathJax"可以在你自己的浏览器解析tex公式，但是没装插件的人看着还是源码。Chrome官方插件应用商店的地址: <https://chrome.google.com/webstore/category/extensions?hl=zh-CN>
+
+
+## 理论推导
+$A_{m \times n}=[A_{m \times n_{1}} A_{m \times n_{2}}]$，其中$n=n_{1}+n_{2}$
+
+
+**注**：Chrome的插件"GitHub with MathJax"可以在浏览器解析Tex公式，但是没装插件的可能看着还是源码。Chrome官方插件应用商店的地址: <https://chrome.google.com/webstore/category/extensions?hl=zh-CN>
 
 
 
