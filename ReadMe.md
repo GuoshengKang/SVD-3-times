@@ -28,12 +28,19 @@ $A_{m \times n} = [A_{m \times n_{1}} \quad A_{m \times n_{2}}]$，其中$n = n_
 
 SVD分解公式: $A_{m \times n} = U_{m \times m} \Sigma_{m \times n} V_{n \times n}^\mathrm{T} \Rightarrow A_{m \times n} \approx U_{m \times k} \Sigma_{k \times k} V_{k \times n}^\mathrm{T} \Rightarrow A_{m \times n} V_{k \times n} \Sigma_{k \times k}^{-1} \approx U_{m \times k}$
 
-同理:  
+同理: $A_{m \times n_{1}}$和$A_{m \times n_{2}}$分别做SVD
 $$A_{m \times n_{1}} = U_{m \times m} \Sigma_{m \times n_{1}} V_{n_{1} \times n_{1}}^\mathrm{T} \Rightarrow A_{m \times n_{1}} \biggl( V_{n_{1} \times k_{1}} \Sigma_{k_{1} \times k_{1}}^{-1}\biggl) \approx U_{m \times k_{1}}$$
 
 $$A_{m \times n_{2}} = U_{m \times m} \Sigma_{m \times n_{2}} V_{n_{2} \times n_{2}}^\mathrm{T} \Rightarrow A_{m \times n_{2}} \biggl(V_{n_{2} \times k_{2}} \Sigma_{k_{2} \times k_{2}}^{-1}\biggr) \approx U_{m \times k_{2}}$$
 
+$A_{m \times n_{1}}$和$A_{m \times n_{2}}$的降维结果$U_{m \times k_{1}}$和$U_{m \times k_{2}}$拼接起来再做一次SVD
+
 $$U_{m \times (k_{1}+k_{2})} =[U_{m \times k_{1}}\quad U_{m \times k_{2}}]= U_{m \times m} \Sigma_{m \times (k_{1}+k_{2})} V_{(k_{1}+k_{2}) \times (k_{1}+k_{2})}^\mathrm{T} \\ \Rightarrow U_{m \times (k_{1}+k_{2})} \biggl(V_{(k_{1}+k_{2}) \times k} \Sigma_{k \times k}^{-1}\biggr) \approx U_{m \times k}$$
+
+因此，有:
+$A_{m \times n} =[A_{m \times n_{1}}\quad A_{m \times n_{2}}]$
+
+$\approx [A_{m \times n_{1}}\biggl( V_{n_{1} \times k_{1}} \Sigma_{k_{1} \times k_{1}}^{-1}\biggl) \quad A_{m \times n_{2}}\biggl(V_{n_{2} \times k_{2}} \Sigma_{k_{2} \times k_{2}}^{-1}\biggr) ]_{m \times n} \quad \bigl(A_{m \times n_{1}}和A_{m \times n_{2}}分别降维\bigr)$
 
 
 $$\begin{gather} 
