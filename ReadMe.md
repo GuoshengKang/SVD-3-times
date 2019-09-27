@@ -31,7 +31,7 @@
   * **Input**: B_n1xk1.txt，B_n2xk2.txt，B_n3xk3.txt
   * **Output**: reduction_mat.txt，reduction_mat=
 $\begin{bmatrix}
-\biggl( V_{n_{1} \times k_{1}} \Sigma_{k_{1} \times k_{1}}^{-1}\biggl)\biggl(V_{k_{1} \times k} \Sigma_{k \times k}^{-1}\biggr) \\
+\biggl( V_{n_{1} \times k_{1}} \Sigma_{k_{1} \times k_{1}}^{-1}\biggl)\biggl(V_{k_{1} \times k} \Sigma_{k \times k}^{-1}\biggr) \
 \biggl(V_{n_{2} \times k_{2}} \Sigma_{k_{2} \times k_{2}}^{-1}\biggr)\biggl(V_{k_{2} \times k} \Sigma_{k \times k}^{-1}\biggr)
 \end{bmatrix}_{n \times k}$
 
@@ -58,7 +58,7 @@ $$\approx \biggl[A_{m \times n_{1}}\biggl( V_{n_{1} \times k_{1}} \Sigma_{k_{1} 
 
 目标降维矩阵为: 
 $$\begin{bmatrix}
-\biggl( V_{n_{1} \times k_{1}} \Sigma_{k_{1} \times k_{1}}^{-1}\biggl)\biggl(V_{k_{1} \times k} \Sigma_{k \times k}^{-1}\biggr) \\
+\biggl( V_{n_{1} \times k_{1}} \Sigma_{k_{1} \times k_{1}}^{-1}\biggl)\biggl(V_{k_{1} \times k} \Sigma_{k \times k}^{-1}\biggr) \
 \biggl(V_{n_{2} \times k_{2}} \Sigma_{k_{2} \times k_{2}}^{-1}\biggr)\biggl(V_{k_{2} \times k} \Sigma_{k \times k}^{-1}\biggr)
 \end{bmatrix}_{n \times k}$$
 
