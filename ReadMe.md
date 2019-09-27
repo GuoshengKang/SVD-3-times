@@ -35,8 +35,7 @@ $$A_{m \times n_{2}} = U_{m \times m} \Sigma_{m \times n_{2}} V_{n_{2} \times n_
 
 
 $$\begin{gather} 
-A_{m \times n_{1}} = U_{m \times m} \Sigma_{m \times n_{1}} V_{n_{1} \times n_{1}}^\mathrm{T} \Rightarrow A_{m \times n_{1}} V_{n_{1} \times k_{1}} \Sigma_{k_{1} \times k_{1}}^{-1} \approx U_{m \times k_{1}} \notag \\ 
-
+A_{m \times n_{1}} = U_{m \times m} \Sigma_{m \times n_{1}} V_{n_{1} \times n_{1}}^\mathrm{T} \Rightarrow A_{m \times n_{1}} V_{n_{1} \times k_{1}} \Sigma_{k_{1} \times k_{1}}^{-1} \approx U_{m \times k_{1}} \notag \\ \\
 A_{m \times n_{2}} = U_{m \times m} \Sigma_{m \times n_{2}} V_{n_{2} \times n_{2}}^\mathrm{T} \Rightarrow A_{m \times n_{2}} V_{n_{2} \times k_{2}} \Sigma_{k_{2} \times k_{2}}^{-1} \approx U_{m \times k_{2}} \notag 
 \end{gather}$$
 
