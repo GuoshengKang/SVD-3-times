@@ -68,6 +68,17 @@ $$\begin{bmatrix}
 2. 最后得到的降维矩阵，如配置表所示[config_token_keywords_reduction.csv](config_token_keywords_reduction.csv)。在Hive中将矩阵存储为二维表，通过表的连接操作完成矩阵的乘法运算
 3. Chrome的插件"GitHub with MathJax"可以在浏览器解析Tex公式，但是没装插件的可能看着还是源码。Chrome官方插件应用商店的地址: <https://chrome.google.com/webstore/category/extensions?hl=zh-CN>
 
+## 附录
+* PCA降维的实现代码: [PCA.py](PCA.py)
+  * Input: [data4pca.txt](data4pca.txt)
+  * Output: 两种实现方式
+    * pca.fit_transform(X)
+    * mat(X)*pca.components_.T
+* 参考资料
+  * [SVD and PCA.pdf](SVD and PCA.pdf)
+  * [svd_pca.pptx](svd_pca.pptx)
+
+
 
 
 
