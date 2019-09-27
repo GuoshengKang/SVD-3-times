@@ -1,17 +1,17 @@
 ## 功能介绍
-针对维度较高的数据，在做SVD降维时非常耗时内存和CPU，一般配置较低的机器可能无法跑出结果。为解决该问题，本项目将高维特征分割成两部分，分别对其进行降维，然后将降维得到的结果拼接起来再做一次降维，得到最终的结果。这样每次做SVD的维度都在可接受的范围内。本项目得到的最终结果是一个降维矩阵，对新的数据直接乘以该降维矩阵进行降维即可，无需再做SVD的运算。
+针对维度较高的数据，在做SVD降维时非常耗内存和CPU，一般配置较低的机器可能无法跑出结果。为解决该问题，本项目将高维特征分割成两部分，分别对其进行降维，然后将降维得到的结果拼接起来再做一次降维，得到最终的结果。这样每次做SVD的维度都在可接受的范围内。本项目得到的最终结果是一个降维矩阵，对新的数据直接乘以该降维矩阵进行降维即可，无需再做SVD的运算。
 ## 实现步骤
 1. **获取数据**: [**query_samples.sql**](query_samples.sql)
 2. **处理数据**: [**text_preprocess.py**](text_preprocess.py)，将原始Hive表中导出的数据处理成规范的分词数据
   * **Input**:
     * raw_samples_50000_front.csv
   * **Output**:
-    * samples_50000.csv
+    * [samples_50000.csv](samples_50000.csv)
     * [dictionary.txt](dictionary.txt)
 3. **文本数据转为矩阵**: [**txt2df.py**](txt2df.py)
   * **Input**:
     * [samples_50000.csv](samples_50000.csv): 50000条样本数据
-    * [dictionary.txt](dictionary.txt): 5934个特征，即关键词
+    * [dictionary.txt](dictionary.txt): 5934个特征，即本项目中为一些关键词
   * **Output**:
     * [column_names.txt](column_names.txt): DataFrame的列名，即特征，与[dictionary.txt](dictionary.txt)一致
     * Amxn.txt: DataFrame保存为txt文件,50000x5934
@@ -65,7 +65,8 @@ $$\begin{bmatrix}
 
 ## 注意
 1. 最后的目标降维矩阵应为一个列块矩阵，由于Latex换行(即"\\\\")无法兼容显示，所以显示成了行块矩阵
-2. Chrome的插件"GitHub with MathJax"可以在浏览器解析Tex公式，但是没装插件的可能看着还是源码。Chrome官方插件应用商店的地址: <https://chrome.google.com/webstore/category/extensions?hl=zh-CN>
+2. 最后得到的降维矩阵，如配置所示[config_token_keywords_reduction.csv](config_token_keywords_reduction.csv)。在Hive中将矩阵存储为二维表，通过表的连接操作完成矩阵的乘法运算
+3. Chrome的插件"GitHub with MathJax"可以在浏览器解析Tex公式，但是没装插件的可能看着还是源码。Chrome官方插件应用商店的地址: <https://chrome.google.com/webstore/category/extensions?hl=zh-CN>
 
 
 
