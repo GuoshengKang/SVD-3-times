@@ -65,7 +65,7 @@ $$\begin{bmatrix}
 
 ## 注意
 1. 最后的目标降维矩阵应为一个列块矩阵，由于Latex换行(即"\\\\")无法兼容显示，所以显示成了行块矩阵
-2. 最后得到的降维矩阵，如配置所示[config_token_keywords_reduction.csv](config_token_keywords_reduction.csv)。在Hive中将矩阵存储为二维表，通过表的连接操作完成矩阵的乘法运算
+2. 最后得到的降维矩阵，如配置表所示[config_token_keywords_reduction.csv](config_token_keywords_reduction.csv)。在Hive中将矩阵存储为二维表，通过表的连接操作完成矩阵的乘法运算
 3. Chrome的插件"GitHub with MathJax"可以在浏览器解析Tex公式，但是没装插件的可能看着还是源码。Chrome官方插件应用商店的地址: <https://chrome.google.com/webstore/category/extensions?hl=zh-CN>
 
 
