@@ -40,11 +40,15 @@ $$U_{m \times (k_{1}+k_{2})} =[U_{m \times k_{1}}\quad U_{m \times k_{2}}]= U_{m
 因此，$A_{m \times n_{1}}$和$A_{m \times n_{2}}$分别降维，然后拼起来的结果再次降维，有:
 $$A_{m \times n} = {[A_{m \times n_{1}}\quad A_{m \times n_{2}}]}_{m \times n}$$
 
-$$\approx [A_{m \times n_{1}}\biggl( V_{n_{1} \times k_{1}} \Sigma_{k_{1} \times k_{1}}^{-1}\biggl) \quad A_{m \times n_{2}}\biggl(V_{n_{2} \times k_{2}} \Sigma_{k_{2} \times k_{2}}^{-1}\biggr) ]_{m \times n}$$
+$$\approx \biggl[A_{m \times n_{1}}\biggl( V_{n_{1} \times k_{1}} \Sigma_{k_{1} \times k_{1}}^{-1}\biggl) \quad A_{m \times n_{2}}\biggl(V_{n_{2} \times k_{2}} \Sigma_{k_{2} \times k_{2}}^{-1}\biggr) \biggr]_{m \times n}$$
 
-$$\approx [A_{m \times n_{1}}\biggl( V_{n_{1} \times k_{1}} \Sigma_{k_{1} \times k_{1}}^{-1}\biggl)\biggl(V_{(k_{1}+k_{2}) \times k} \Sigma_{k \times k}^{-1}\biggr) \quad A_{m \times n_{2}}\biggl(V_{n_{2} \times k_{2}} \Sigma_{k_{2} \times k_{2}}^{-1}\biggr)\biggl(V_{(k_{1}+k_{2}) \times k} \Sigma_{k \times k}^{-1}\biggr) ]_{m \times k}$$
+$$\approx \biggl[A_{m \times n_{1}}\biggl( V_{n_{1} \times k_{1}} \Sigma_{k_{1} \times k_{1}}^{-1}\biggl)\biggl(V_{(k_{1}+k_{2}) \times k} \Sigma_{k \times k}^{-1}\biggr) + A_{m \times n_{2}}\biggl(V_{n_{2} \times k_{2}} \Sigma_{k_{2} \times k_{2}}^{-1}\biggr)\biggl(V_{(k_{1}+k_{2}) \times k} \Sigma_{k \times k}^{-1}\biggr) \biggr]_{m \times k}$$
 
-
+目标降维矩阵为: 
+$$\begin{bmatrix}
+\biggl( V_{n_{1} \times k_{1}} \Sigma_{k_{1} \times k_{1}}^{-1}\biggl)\biggl(V_{(k_{1}+k_{2}) \times k} \Sigma_{k \times k}^{-1}\biggr) \\
+\biggl(V_{n_{2} \times k_{2}} \Sigma_{k_{2} \times k_{2}}^{-1}\biggr)\biggl(V_{(k_{1}+k_{2}) \times k} \Sigma_{k \times k}^{-1}\biggr)
+\end{bmatrix}$$
 
 
 **注**：Chrome的插件"GitHub with MathJax"可以在浏览器解析Tex公式，但是没装插件的可能看着还是源码。Chrome官方插件应用商店的地址: <https://chrome.google.com/webstore/category/extensions?hl=zh-CN>
