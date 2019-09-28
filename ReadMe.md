@@ -78,7 +78,8 @@ $$\begin{bmatrix}
   * [SVD and PCA.pdf](SVD_and_PCA.pdf)
   * [svd_pca.pptx](svd_pca.pptx)
 
-<font color=#0099ff>欢迎并感谢您提出问题或建议: [我要提问](https://github.com/guoshengkang/SVD-3-times/issues/new)</font>
+-----
+***欢迎并感谢您提出问题或建议: [我要提问](https://github.com/guoshengkang/SVD-3-times/issues/new)***
 
 
 
