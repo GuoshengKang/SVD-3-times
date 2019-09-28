@@ -79,7 +79,7 @@ $$\begin{bmatrix}
   * [svd_pca.pptx](svd_pca.pptx)
 
 -----
-欢迎并感谢您提出宝贵的问题和建议: 点击[**【我要提问】**](https://github.com/guoshengkang/SVD-3-times/issues/new)
+欢迎并感谢您提出宝贵的问题或建议: 点击[**【我要提问】**](https://github.com/guoshengkang/SVD-3-times/issues/new)
 
 
 
